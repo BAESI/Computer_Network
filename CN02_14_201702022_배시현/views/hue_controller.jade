@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title hue_controller
+  body
+    #hue_controller
+    form(action="/huecontrol", method="post")
+      span HueId :
+      input(type="test", id="Id", name="hueid")
+      p
+      span Power :
+      input(type="radio", id="hue_power_on", name="power", value="On")
+      label(for="hue_power_on") On
+      input(type="radio", id="hue_power_off", name="power", value="Off")
+      label(for="hue_power_off") Off
+      p
+      span Brightness :
+      input(type="range", id="bright", name="brightness", min="0", max="254")
+      label(for="brightness") 0 ~ 254
+      p
+      | Brightness Value:
+      span(id="value") 0
+      script(type="text/javascript", src="/views/js/range_value.js")
+      p
+      span Saturaiton (채도) :
+      input(type="text", id="sat", name="saturation")
+      p
+      span Hue (색상) :
+      input(type="text", id="hue", name="hue")
+      p
+      button(type="submit") Submit
